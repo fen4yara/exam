@@ -5,9 +5,44 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:exam"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800"
+        >
     <Grid>
+        <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
 
+        <StackPanel Orientation="Vertical" Grid.Row="0" Margin="0,0,0,10">
+            <TextBlock Text="Тип рыбы:" Margin="0,0,0,5" />
+            <TextBox x:Name="FishTypeInput" Width="200" Margin="0,0,0,10" />
+
+            <TextBlock Text="Максимальная температура (°C):" Margin="0,0,0,5" />
+            <TextBox x:Name="MaxTempInput" Width="200" Margin="0,0,0,10" />
+
+            <TextBlock Text="t1 (минуты):" Margin="0,0,0,5" />
+            <TextBox x:Name="MaxDurationInput" Width="200" Margin="0,0,0,10" />
+
+            <TextBlock Text="Минимальная температура (°C):" Margin="0,0,0,5" />
+            <TextBox x:Name="MinTempInput" Width="200" Margin="0,0,0,10" />
+
+            <TextBlock Text="t2 (минуты):" Margin="0,0,0,5" />
+            <TextBox x:Name="MinDurationInput" Width="200" Margin="0,0,0,10" />
+
+            <TextBlock Text="Время отпарвки (dd.mm.yyyy hh:mm):" Margin="0,0,0,5" />
+            <TextBox x:Name="StartTimeInput" Width="200" Margin="0,0,0,10" />
+
+            <TextBlock Text="Температуры (разделите пробелом или запятой):" Margin="0,0,0,5" />
+            <TextBox x:Name="TemperaturesInput" Width="400" Margin="0,0,0,10" />
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,10,0,0">
+                <Button Content="Загрузить из файла" Width="120" Margin="0,0,10,0" Click="LoadFromFile_Click" />
+                <Button Content="Загрузить из полей" Width="120" Margin="0,0,10,0" Click="ManualInput_Click" />
+                <Button Content="Вывести отчет" Width="120" Click="AnalyzeData_Click" />
+            </StackPanel>
+        </StackPanel>
+
+        <TextBox x:Name="ReportOutput" Grid.Row="1" Margin="0,10,0,0" TextWrapping="Wrap" IsReadOnly="True" VerticalScrollBarVisibility="Auto"/>
     </Grid>
     
 </Window>

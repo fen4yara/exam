@@ -1,0 +1,1 @@
+12.06.2022 16:23:00: Fell below min temperature -3°C. Actual: -4°C
